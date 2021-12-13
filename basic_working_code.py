@@ -7,7 +7,10 @@ len(colors)
 
 def integer_to_matrix(integer, height=3,width=3):
     length = height * width
-    integer_string = f'{integer}'.rjust(length, '0')
+    integer_string = f'{integer}'[:length].rjust(length, '0')
+    cut_due_to_len = f'{integer}'[length+1:]
+    if cut_due_to_len:
+        print(f'Integer longer than max, so these where cut: {cut_due_to_len}')
     encoded_integer = '1'+ integer_string
     matrix = []
     slices = []
