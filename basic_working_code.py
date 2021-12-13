@@ -17,17 +17,15 @@ def integer_to_matrix(integer, height=3,width=3):
     start = [a for a in slices[:-1]]
     end = [a for a in slices[1:]]
     for count, i in enumerate(start):
-        row = integer_string[i:end[count]]
-        print(row)
+        row = [colors[int(a)] for a in integer_string[i:end[count]]]
         matrix.append(row)
-    return matrix
+    return np.array(matrix)
   
-  #example
-  my_num = integer_to_matrix(1, 5,5)
-  
-# results in ---->
-# 00000
-# 00000
-# 00000
-# 00000
-# 00001
+#example
+my_num = integer_to_matrix(45234546999995398941957, 5,5)
+
+def matrix_to_image(matrix, name='new.png'):
+    fig = plt.figure()
+    plt.axis('off')
+    plt.imshow(my_num)
+    plt.savefig(name)
