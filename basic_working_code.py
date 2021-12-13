@@ -27,8 +27,8 @@ def integer_to_matrix(integer, height=3,width=3):
 #example
 my_num = integer_to_matrix(45234546999995398941957, 5,5)
 
-def matrix_to_image(matrix, name='new.png'):
+def draw_matrix(image_matrix, name='example.png'):
     fig = plt.figure()
     plt.axis('off')
-    plt.imshow(my_num)
+    plt.imshow(image_matrix)
     plt.savefig(name)
